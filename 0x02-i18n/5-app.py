@@ -42,7 +42,7 @@ def before_request() -> None:
 
     g.user = get_user()
 
-# @babel.localeselector
+@babel.localeselector
 def get_locale() -> str:
     """Retrieves the locale for a web page.
 
@@ -59,8 +59,6 @@ def index():
     '''render index route'''
     return render_template("4-index.html",)
 
-# uncomment this line and comment the @babel.localeselector
-babel.init_app(app, locale_selector=get_locale)
 
 if __name__ == "__main__":
     app.run()
